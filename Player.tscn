@@ -24,14 +24,14 @@ animations = [ {
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "fall",
 "speed": 5.0
 } ]
 
@@ -58,7 +58,10 @@ current = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 640, 640 )
+
+[node name="Sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 11 )
 centered = false
-offset = Vector2( 0, -64 )
